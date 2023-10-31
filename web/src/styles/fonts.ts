@@ -1,4 +1,4 @@
 export default {
-  BODY: 'Open Sans, sans-serif',
+  OpenSans_Regular: 'Open Sans',
+  Manrope_Regular: 'Manrope',
 }
-
