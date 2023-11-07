@@ -12,7 +12,7 @@ import { Home as HomePage } from '@/app/conta/page';
 import { auth } from '@/services/firebase';
 
 export default function Home() {
-  const { user, setUser } = useContext(AuthContext);
+  const { user, setUser, userInformations, handleGetUserInformations } = useContext(AuthContext);
 
   // Set an initializing state whilst Firebase connects
   const [initializing, setInitializing] = useState(true);
@@ -29,17 +29,26 @@ export default function Home() {
   }, []);
 
   if (initializing) return (
-    <Center>
+    <Center style={{display: 'flex', width: '100vw', height: '100vh', alignItems: 'center', justifyContent: 'center'}}>
       <Spinner size="xl" color="white" />
     </Center>
   );
-
   if (!user) {
     return (
       <Auth />
     );
   }
-  return (
-    <HomePage />
-  )  
+  if(user && !userInformations) {
+    handleGetUserInformations()
+    return (
+      <Center style={{display: 'flex', width: '100vw', height: '100vh', alignItems: 'center', justifyContent: 'center'}}>
+        <Spinner size="xl" color="white" />
+      </Center>
+    )
+  }
+  if(user && userInformations) {
+    return (
+      <HomePage />
+    )  
+  }
 }

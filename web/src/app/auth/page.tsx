@@ -13,9 +13,9 @@ export const Auth = () => {
   const { handleCreateUser, handleSignIn } = useContext(AuthContext);
   const [authType, setAuthType] = useState<"LOGIN" | "REGISTER">("LOGIN");
 
-  const [username, setUsername] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
+  const [username, setUsername] = useState<string>("Erik Matheus");
+  const [email, setEmail] = useState<string>("erik@gmail.com");
+  const [password, setPassword] = useState<string>("123123");
 
   function handleAction() {
     if (authType === "LOGIN") {
@@ -47,19 +47,24 @@ export const Auth = () => {
         borderRadius="25px"
         padding="5rem 2rem"
         margin={4}
+        maxWidth="30rem"
         boxShadow="0px 0px 10px 0px rgba(0,0,0,0.75)"
       >
         <Text
-          textAlign={"center"} fontSize="1.7rem" fontWeight="bold"
-          fontFamily={"Arial"} color={colors.BLACK_PRIMARY}
-          marginBottom={"1rem"}
+          style={{
+            fontSize: '3rem',
+            color: 'white',
+            fontWeight: 'bold',
+            marginBottom: '1.7rem',
+            textAlign: "center"
+          }}
         >
-          FAÇA O LOGIN
+          4º UAM BANK
         </Text>
         {authType === "REGISTER" && (
           <Input
-            backgroundColor={colors.BLACK_PRIMARY}
-            placeholder="username"
+            backgroundColor={`${colors.BLACK_PRIMARY}80`}
+            placeholder="Nome Completo"
             marginBottom={1}
             value={username}
             onChange={(event) => {
@@ -68,8 +73,8 @@ export const Auth = () => {
           />
         )}
         <Input
-          backgroundColor={colors.BLACK_PRIMARY}
-          placeholder="email"
+          backgroundColor={`${colors.BLACK_PRIMARY}80`}
+          placeholder="Seu melhor e-mail"
           marginBottom={1}
           value={email}
           onChange={(event) => {
@@ -77,12 +82,17 @@ export const Auth = () => {
           }}
         />
         <Input
-          backgroundColor={colors.BLACK_PRIMARY}
-          placeholder="password"
+          backgroundColor={`${colors.BLACK_PRIMARY}80`}
+          placeholder="uma senha bem segura"
           marginBottom={1}
           value={password}
           onChange={(event) => {
             setPassword(event.target.value);
+          }}
+          onKeyDown={(event) => {
+            if (event.key === 'Enter') {
+              handleAction();
+            }
           }}
         />
         <Center>
