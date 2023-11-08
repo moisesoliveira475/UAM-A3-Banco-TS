@@ -7,8 +7,9 @@
     "build:watch": "tsc --watch",
     "deploy": "firebase deploy",
     "test": "jest",
-    "serve": "npm run build && firebase.cmd emulators:start",
+    "serve": "cd functions && yarn build && cd .. && npm run build && firebase.cmd emulators:start",
     "all": "npm run build && firebase.cmd emulators:start --only firestore,auth",
+    "functions": "npm run build && firebase.cmd emulators:start --only functions",
     "shell": "npm run build && firebase.cmd functions:shell",
     "start": "npm run shell"
   },
