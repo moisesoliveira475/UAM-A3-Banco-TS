@@ -1,5 +1,6 @@
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
+import { AuthProvider } from '@/contexts/useAuth'
 import { Box, ChakraProvider } from '@chakra-ui/react'
 import type { Metadata } from 'next'
 
@@ -16,13 +17,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ChakraProvider>
-          <Box minHeight='100vh' backgroundColor='#9413dc'>
-            <Header />
-              {children}
-            <Footer />
-          </Box>
-        </ChakraProvider>   
+        <AuthProvider>
+          <ChakraProvider>
+            <Box minHeight='100vh' backgroundColor='#9413dc'>
+              <Header />
+                {children}
+              <Footer />
+            </Box>
+          </ChakraProvider>   
+        </AuthProvider>
       </body>
     </html> 
   )
