@@ -1,0 +1,31 @@
+{
+  "name": "firebase",
+  "main": "lib/index.js",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "deploy": "firebase deploy",
+    "test": "jest",
+    "serve": "npm run build && firebase.cmd emulators:start",
+    "all": "npm run build && firebase.cmd emulators:start --only firestore,auth",
+    "shell": "npm run build && firebase.cmd functions:shell",
+    "start": "npm run shell"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.8",
+    "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "@typescript-eslint/parser": "^6.10.0",
+    "eslint": "^8.53.0",
+    "mocha": "^10.2.0",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "firebase": "^10.6.0",
+    "node": "^21.1.0"
+  }
+}
