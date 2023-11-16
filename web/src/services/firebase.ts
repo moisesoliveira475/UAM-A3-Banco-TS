@@ -6,7 +6,7 @@ import { getFirestore } from 'firebase/firestore';
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: "AIzaSyCHDEOk2DVhRSvIDhzixYgpoI2TwtZTH7w",
   authDomain: "uam-bank.firebaseapp.com",
   projectId: "uam-bank",
