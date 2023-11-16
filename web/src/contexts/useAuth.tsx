@@ -8,18 +8,12 @@ import { createUserWithEmailAndPassword, signOut, signInWithEmailAndPassword } f
 import firebaseApp, { auth, db } from '@/services/firebase';
 
 import { randomKey } from '@/utils/randomKey';
+import { userInformations } from '@/types/auth.types';
 
 interface AuthContextType {
   user: User | null;
   setUser: React.Dispatch<React.SetStateAction<User | null>>;
-  userInformations: {
-    username: string;
-    agency: number;
-    balance: number;
-    account: number;
-    createdAt: Timestamp;
-    isActive: boolean;
-  } | null;
+  userInformations: userInformations | null;
   handleCreateUser: (username: string, email: string, password: string) => Promise<void>;
   handleSignOut: () => Promise<void>;
   handleSignIn: (email: string, password: string) => Promise<void>;
