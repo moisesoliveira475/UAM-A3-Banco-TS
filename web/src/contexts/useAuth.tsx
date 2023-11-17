@@ -5,7 +5,7 @@ import { User } from 'firebase/auth';
 import { Timestamp, doc, setDoc, getDoc } from 'firebase/firestore';
 import { createUserWithEmailAndPassword, signOut, signInWithEmailAndPassword } from 'firebase/auth';
 
-import firebaseApp, { auth, db } from '@/services/firebase';
+import { auth, db } from '@/services/firebase';
 
 import { randomKey } from '@/utils/randomKey';
 import { userInformations } from '@/types/auth.types';
@@ -58,6 +58,7 @@ export function AuthProvider({ children }: React.PropsWithChildren) {
 
       if (docSnap.exists()) {
         setUserInformations(docSnap.data() as AuthContextType['userInformations']);
+        console.log(docSnap.data());
         setUser(user);
       } else {
         alert('Usuário não encontrado');

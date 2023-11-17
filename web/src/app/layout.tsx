@@ -1,8 +1,10 @@
-import { Footer } from '@/components/Footer'
-import { Header } from '@/components/Header'
-import { AuthProvider } from '@/contexts/useAuth'
 import { Box, ChakraProvider } from '@chakra-ui/react'
+
+import { AuthProvider } from '@/contexts/useAuth'
+
 import type { Metadata } from 'next'
+
+import { colors } from '@/styles'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -19,10 +21,8 @@ export default function RootLayout({
       <body>
         <AuthProvider>
           <ChakraProvider>
-            <Box minHeight='100vh' backgroundColor='#9413dc'>
-              <Header />
-                {children}
-              <Footer />
+            <Box width="100vw" height="100vh" backgroundColor={colors.BLUE_TERTIARY}>
+              {children}
             </Box>
           </ChakraProvider>   
         </AuthProvider>

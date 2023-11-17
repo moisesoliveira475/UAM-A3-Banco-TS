@@ -6,8 +6,8 @@ import { Center, Spinner } from "@chakra-ui/react";
 
 import { AuthContext } from '@/contexts/useAuth';
 
-import { LoginCard } from "@/components/Card";
-import CardInfo from '@/components/CardInfo';
+import { Auth } from "@/app/auth/page";
+import { Home as HomePage } from '@/app/conta/page';
 
 import { auth } from '@/services/firebase';
 
@@ -36,10 +36,10 @@ export default function Home() {
 
   if (!user) {
     return (
-      <LoginCard />
+      <Auth />
     );
   }
   return (
-    <CardInfo />
+    <HomePage />
   )  
 }
