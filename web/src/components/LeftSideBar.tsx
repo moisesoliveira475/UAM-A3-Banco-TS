@@ -1,6 +1,11 @@
-import { Box, Text } from "@chakra-ui/react"
+import { Box, Button, HStack, Heading, IconButton, Stack, Text, VStack, useColorMode } from "@chakra-ui/react"
+import { FiGithub, FiMenu, FiMoon, FiSun } from "react-icons/fi"
 
-export const LeftSideBar = () => {
+interface LeftSideBarProps {
+    button: React.ReactNode
+}
+
+export const LeftSideBar = ({button}: LeftSideBarProps) => {
     return (
         <Box
             gridArea={'sideBar'}
@@ -16,12 +21,40 @@ export const LeftSideBar = () => {
                 left: 0,
             }}
         >
-            <Box color={'white'} fontSize={'24px'} fontWeight={'bold'} marginTop={'20px'}>
-                <Text>Bank TS</Text>
-            </Box>
-            <Text color={'white'} fontSize={'18px'} marginTop={'20px'}>Account</Text>
-            <Text color={'white'} fontSize={'18px'} marginTop={'20px'}>Invoices </Text>
-            <Text color={'white'} fontSize={'18px'} marginTop={'20px'}>Settings</Text>
+            <Stack spacing={'6'}>
+            <Stack direction="row" align="center" paddingTop={'5'}>
+             <IconButton aria-label="Menu" icon={<FiMenu />} />
+             <Heading fontSize="md">UAM Bank</Heading>
+             {button}
+           </Stack>
+           <Stack direction="row" align="center">
+             <Button leftIcon={<FiGithub />} variant="link">
+               <Text>Github</Text>
+             </Button>
+           </Stack>
+           <Stack spacing="2">
+             <Heading fontSize="sm">Análise</Heading>
+             <VStack>
+               <Button variant="ghost" colorScheme="gray">
+                 <Text fontSize={'sm'}>Carteira</Text>
+               </Button>
+               <Button variant="ghost" colorScheme="gray">
+                 <Text fontSize={'sm'}>Faturas</Text>
+               </Button>
+             </VStack>
+           </Stack>
+           <Stack spacing="2">
+             <Heading fontSize="sm">Conta</Heading>
+             <VStack>
+               <Button variant="ghost" colorScheme="gray">
+                 <Text fontSize={'sm'}>Configurações</Text>
+               </Button>
+               <Button variant="ghost" colorScheme="gray">
+                 <Text fontSize={'sm'}>Ajuda</Text>
+               </Button>
+             </VStack>
+           </Stack>
+            </Stack>
         </Box>
     )
 }
