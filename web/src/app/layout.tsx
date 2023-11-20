@@ -7,7 +7,7 @@ import type { Metadata } from 'next'
 import { colors } from '@/styles'
 
 export const metadata: Metadata = {
-  title: 'Create Next App',
+  title: 'UAM Bank',
   description: 'Gene rated by create next app',
 }
 
