@@ -43,7 +43,7 @@ export const Auth = () => {
         style={{ position: 'absolute', top: '0', left: '0', width: '100vw', height: '100vh', opacity: '0.1', objectFit: 'cover' }}
       />
       <Box
-        backgroundColor={colors.WHITE_PRIMARY}
+        backgroundColor={colors.BLUE_SECONDARY}
         borderRadius="25px"
         padding="5rem 2rem"
         margin={4}
@@ -58,6 +58,7 @@ export const Auth = () => {
         </Text>
         {authType === "REGISTER" && (
           <Input
+            backgroundColor={colors.BLACK_PRIMARY}
             placeholder="username"
             marginBottom={1}
             value={username}
@@ -67,6 +68,7 @@ export const Auth = () => {
           />
         )}
         <Input
+          backgroundColor={colors.BLACK_PRIMARY}
           placeholder="email"
           marginBottom={1}
           value={email}
@@ -75,6 +77,7 @@ export const Auth = () => {
           }}
         />
         <Input
+          backgroundColor={colors.BLACK_PRIMARY}
           placeholder="password"
           marginBottom={1}
           value={password}
