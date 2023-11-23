@@ -1,6 +1,6 @@
 import { Box, Text } from "@chakra-ui/react";
 import QuickTransfer from "./QuickTransfer";
-import WalletComponent from "./Wallet";
+import Wallet from "./Wallet";
 
 interface RightSideBarProps {
     button: React.ReactNode;
@@ -24,7 +24,7 @@ export const RightSideBar = ({ button }: RightSideBarProps) => {
                 <Box color={"white"} fontSize={'24px'} fontWeight={'bold'} marginTop={'20px'}>
                     <Text textAlign="center">Wallet</Text>
                 </Box>
-                <WalletComponent />
+                <Wallet />
                 <QuickTransfer />
                 <Box style={{ position: 'absolute', bottom: '20px', right: '20px' }}>
                     {button}

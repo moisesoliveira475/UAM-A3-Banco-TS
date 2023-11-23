@@ -1,7 +1,7 @@
+import { connectAuthEmulator, createUserWithEmailAndPassword } from "firebase/auth";
+import { doc, getDoc } from 'firebase/firestore';
 import 'isomorphic-fetch';
 import { auth, db } from '../services/firebase';
-import { signInWithEmailAndPassword, createUserWithEmailAndPassword, connectAuthEmulator } from "firebase/auth";
-import { doc, getDoc } from 'firebase/firestore';
 
 describe("User", () => {   
   beforeAll(async () => {

@@ -1,8 +1,8 @@
 "use client";
 
-import { useContext, useState } from "react";
-import { Box, Button, Center, Heading, Input, Link, Text } from "@chakra-ui/react";
+import { Box, Button, Center, Input, Text } from "@chakra-ui/react";
 import Image from 'next/image';
+import { useContext, useState } from "react";
 
 import { LoginButton } from "@/components/LoginButton";
 

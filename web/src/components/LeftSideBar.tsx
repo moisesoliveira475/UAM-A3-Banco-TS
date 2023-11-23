@@ -1,4 +1,4 @@
-import { Box, Button, Heading, IconButton, Stack, Text, VStack } from "@chakra-ui/react"
+import { Box, Button, Heading, IconButton, Link, Stack, Text, VStack } from "@chakra-ui/react"
 import { FiGithub, FiMenu } from "react-icons/fi"
 
 interface LeftSideBarProps {
@@ -24,33 +24,38 @@ export const LeftSideBar = ({ button }: LeftSideBarProps) => {
       <Stack spacing={'6'}>
         <Stack direction="row" align="center" paddingTop={'5'}>
           <IconButton aria-label="Menu" icon={<FiMenu />} />
-          <Heading fontSize="md">UAM Bank</Heading>
+          <Heading fontSize="lg">UAM Bank</Heading>
           {button}
         </Stack>
         <Stack direction="row" align="center">
           <Button leftIcon={<FiGithub />} variant="link">
-            <Text>Github</Text>
+            <Link _hover={
+              {
+                textDecoration: 'none',
+                color: 'blue.500'
+              }
+            } isExternal href="https://github.com/moisesoliveira475/UAM-A3-Banco-TS">Github</Link>
           </Button>
         </Stack>
         <Stack spacing="2">
-          <Heading fontSize="sm">Análise</Heading>
+          <Heading fontSize="lg">Análise</Heading>
           <VStack>
             <Button variant="ghost" colorScheme="gray">
-              <Text fontSize={'sm'}>Carteira</Text>
+              <Text fontSize={'lg'}>Carteira</Text>
             </Button>
             <Button variant="ghost" colorScheme="gray">
-              <Text fontSize={'sm'}>Faturas</Text>
+              <Text fontSize={'lg'}>Faturas</Text>
             </Button>
           </VStack>
         </Stack>
         <Stack spacing="2">
-          <Heading fontSize="sm">Conta</Heading>
+          <Heading fontSize="lg">Conta</Heading>
           <VStack>
             <Button variant="ghost" colorScheme="gray">
-              <Text fontSize={'sm'}>Configurações</Text>
+              <Text fontSize={'lg'}>Configurações</Text>
             </Button>
             <Button variant="ghost" colorScheme="gray">
-              <Text fontSize={'sm'}>Ajuda</Text>
+              <Text fontSize={'lg'}>Ajuda</Text>
             </Button>
           </VStack>
         </Stack>

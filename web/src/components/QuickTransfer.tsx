@@ -1,5 +1,5 @@
 import { colors } from '@/styles';
-import { Box, Button, FormControl, FormLabel, Input, useToast } from '@chakra-ui/react';
+import { Box, Button, FormControl, FormLabel, Input, Text, useToast } from '@chakra-ui/react';
 import { useState } from 'react';
 
 const QuickTransfer = () => {
@@ -29,16 +29,13 @@ const QuickTransfer = () => {
  return (
         <Box paddingLeft="10px">
             <form onSubmit={handleSubmit}>
+                <Text color={`${colors.WHITE_PRIMARY}`} fontSize={'3xl'} paddingBottom={2}>Quick Transfer</Text>
                 <FormControl>
-                    <FormLabel>Número da conta</FormLabel>
+                    <FormLabel fontSize={'lg'}>Número da conta</FormLabel>
                     <Input type="text" backgroundColor={colors.BLACK_PRIMARY}/>
                 </FormControl>
                 <FormControl>
-                    <FormLabel>Debit</FormLabel>
-                    <Input type="text" backgroundColor={colors.BLACK_PRIMARY}/>
-                </FormControl>
-                <FormControl>
-                    <FormLabel>Digite o valor</FormLabel>
+                    <FormLabel fontSize={'lg'}>Digite o valor</FormLabel>
                     <Input type="number" value={valor} onChange={(e) => setValor(e.target.value)} backgroundColor={colors.BLACK_PRIMARY}/>
                 </FormControl>
                 <Button mt={4} colorScheme="teal" type="submit">

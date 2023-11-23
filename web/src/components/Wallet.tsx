@@ -1,15 +1,15 @@
 import { AuthContext } from '@/contexts/useAuth';
 import { List, ListIcon, ListItem, Text, VStack } from '@chakra-ui/react';
 import { useContext } from 'react';
-import { FiUser } from 'react-icons/fi';
+import { FiUser, FiBriefcase, FiCreditCard, FiDollarSign } from 'react-icons/fi';
 
-const WalletComponent = () => {
+const Wallet = () => {
 
   const { userInformations } = useContext(AuthContext);
 
   if (userInformations) {
     return (
-      <VStack>
+      <VStack paddingBottom={20}>
         <Text>Account Information</Text>
         <List spacing={3}>
           <ListItem>
@@ -17,15 +17,15 @@ const WalletComponent = () => {
             Username: {userInformations?.username}
           </ListItem>
           <ListItem>
-            <ListIcon as={FiUser} color={'green.500'}/>
+            <ListIcon as={FiBriefcase} color={'green.500'}/>
             Agency: {userInformations?.agency}
           </ListItem>
           <ListItem>
-          <ListIcon as={FiUser} color={'green.500'}/>
+            <ListIcon as={FiCreditCard} color={'green.500'}/>
             Account: {userInformations?.account}
           </ListItem>
           <ListItem>
-          <ListIcon as={FiUser} color={'green.500'}/>
+            <ListIcon as={FiDollarSign} color={'green.500'}/>
             Balance: {userInformations?.balance}
           </ListItem>
         </List>
@@ -34,5 +34,6 @@ const WalletComponent = () => {
   };
 };
 
-export default WalletComponent;
+
+export default Wallet;
 
