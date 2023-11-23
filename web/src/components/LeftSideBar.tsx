@@ -1,5 +1,6 @@
 import { Box, Button, Heading, IconButton, Link, Stack, Text, VStack } from "@chakra-ui/react"
 import { FiGithub, FiMenu } from "react-icons/fi"
+import NextLink from 'next/link'
 
 interface LeftSideBarProps {
   button: React.ReactNode
@@ -29,7 +30,7 @@ export const LeftSideBar = ({ button }: LeftSideBarProps) => {
         </Stack>
         <Stack direction="row" align="center">
           <Button leftIcon={<FiGithub />} variant="link">
-            <Link _hover={
+            <Link as={NextLink}  _hover={
               {
                 textDecoration: 'none',
                 color: 'blue.500'
