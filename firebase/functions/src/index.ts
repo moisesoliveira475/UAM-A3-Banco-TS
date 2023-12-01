@@ -10,6 +10,7 @@ import {_deposit} from "./admin/deposit";
 import { _withdraw } from "./admin/withdraw";
 import { _transfer } from './admin/transfer';
 import { _handleLoanRequested } from './admin/loan';
+import { _chat } from './admin/chat';
 
 setGlobalOptions({maxInstances: 10});
 
@@ -118,4 +119,31 @@ exports.handleLoanRequested = onRequest(async (req, res) => {
     res.status(Number(errorFirebase.code)).send(({resultType: 'error', resultMessage: errorFirebase.message}));
   }
 });
+
+// o requestChat precisa de dados {userUid: string, message: string} no body;
+// o requestChat retorna {resultType: 'success' | 'error', resultMessage: string} como resposta;
+exports.requestChat = onRequest(async (req, res) => {
+  if (req.method !== "POST" ||
+      Object.keys(req.body.data).length === 0 ||
+      Object.keys(req.body).length === 0) {
+    res.status(400).send(({resultType: 'error', resultMessage: "No data provided"}));
+    return;
+  }
+  if (!("data" in req.body) ||
+  !("message" in req.body.data) ||
+  !("userUid" in req.body.data)) {
+    res.status(400).send(({resultType: 'error', resultMessage: "No data provided"}));
+    return;
+  }
+
+  try {
+    const result: {resultType: 'success' | 'error', resultMessage: string} = 
+      await _chat({userUid: req.body.data.userUid, message: req.body.data.message});
+    res.json({data: result});
+  } catch (error) {
+    const errorFirebase = error as HttpsError;
+    res.status(Number(errorFirebase.code)).send(({resultType: 'error', resultMessage: errorFirebase.message}));
+  }
+});
+
 
