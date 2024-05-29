@@ -29,6 +29,7 @@ interface TransactionCardProps {
 }
 
 export function TransactionCard({ data }: TransactionCardProps) {
+  console.log(data)
   return (
     <Box
       style={{
@@ -57,19 +58,19 @@ export function TransactionCard({ data }: TransactionCardProps) {
           {(data.type === "transfer@sent" ||
             data.type === "transfer@received") && (
             <FaMoneyBillTransfer
-              style={{ width: 18, height: 18, fill: "#1192EF" }}
+              style={{ width: 18, height: 18, fill: "#42e2a1" }}
             />
           )}
           {data.type === "deposit" && (
             <FiArrowUp style={{ width: 18, height: 18, stroke: "#1192EF" }} />
           )}
           {data.type === "withdraw" && (
-            <FiArrowDown style={{ width: 18, height: 18, stroke: "#1192EF" }} />
+            <FiArrowDown style={{ width: 18, height: 18, stroke: "#e2a142" }} />
           )}
           {data.type === "credit@payment" ||
             (data.type === "credit@loan" && (
               <FiCreditCard
-                style={{ width: 18, height: 18, stroke: "#1192EF" }}
+                style={{ width: 18, height: 18, stroke: "#e24242" }}
               />
             ))}
         </Box>

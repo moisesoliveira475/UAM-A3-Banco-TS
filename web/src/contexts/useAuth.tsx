@@ -11,6 +11,7 @@ import { randomKey } from '@/utils/randomKey';
 import { userInformations } from '@/types/auth.types';
 import { useToast } from '@chakra-ui/react';
 import { calcDynamicCredit } from '@/utils/calcDynamicCredit';
+import { convertFirebaseMessages } from '@/utils/convertFirebaseMessages';
 
 interface AuthContextType {
   user: User | null;
@@ -71,7 +72,7 @@ export function AuthProvider({ children }: React.PropsWithChildren) {
     })
     .catch((error) => {
       toast({
-        title: error.code,
+        title: convertFirebaseMessages(error.code),
         status: "error",
         duration: 3000,
         isClosable: true,
@@ -98,7 +99,7 @@ export function AuthProvider({ children }: React.PropsWithChildren) {
     })
     .catch((error) => {
       toast({
-        title: error.code,
+        title: convertFirebaseMessages(error.code),
         status: "error",
         duration: 3000,
         isClosable: true,
@@ -146,14 +147,14 @@ export function AuthProvider({ children }: React.PropsWithChildren) {
           historicOfBalance: [...userInformations.historicOfBalance, {value: userInformations.balance + value, date: Timestamp.now()}]
         });
         toast({
-          title: result.resultMessage,
+          title: convertFirebaseMessages(result.resultMessage),
           status: "success",
           duration: 2000,
           isClosable: true,
         });
       } else {
         toast({
-          title: result.resultMessage,
+          title: convertFirebaseMessages(result.resultMessage),
           status: "error",
           duration: 3000,
           isClosable: true,
@@ -162,7 +163,7 @@ export function AuthProvider({ children }: React.PropsWithChildren) {
     })
     .catch((error) => {
       toast({
-        title: error.code,
+        title: convertFirebaseMessages(error.code),
         status: "error",
         duration: 3000,
         isClosable: true,
@@ -199,14 +200,14 @@ export function AuthProvider({ children }: React.PropsWithChildren) {
           historicOfBalance: [...userInformations.historicOfBalance, {value: userInformations.balance - value, date: Timestamp.now()}]
         });
         toast({
-          title: result.resultMessage,
+          title: convertFirebaseMessages(result.resultMessage),
           status: "success",
           duration: 2000,
           isClosable: true,
         });
       } else {
         toast({
-          title: result.resultMessage,
+          title: convertFirebaseMessages(result.resultMessage),
           status: "error",
           duration: 3000,
           isClosable: true,
@@ -215,7 +216,7 @@ export function AuthProvider({ children }: React.PropsWithChildren) {
     })
     .catch((error) => {
       toast({
-        title: error.code,
+        title: convertFirebaseMessages(error.code),
         status: "error",
         duration: 3000,
         isClosable: true,
@@ -251,14 +252,14 @@ export function AuthProvider({ children }: React.PropsWithChildren) {
           historicOfBalance: [...userInformations.historicOfBalance, {value: userInformations.balance - value, date: Timestamp.now()}]
         });
         toast({
-          title: result.resultMessage,
+          title: convertFirebaseMessages(result.resultMessage),
           status: "success",
           duration: 2000,
           isClosable: true,
         });
       } else {
         toast({
-          title: result.resultMessage,
+          title: convertFirebaseMessages(result.resultMessage),
           status: "error",
           duration: 3000,
           isClosable: true,
@@ -267,7 +268,7 @@ export function AuthProvider({ children }: React.PropsWithChildren) {
     })
     .catch((error) => {
       toast({
-        title: error.code,
+        title: convertFirebaseMessages(error.code),
         status: "error",
         duration: 3000,
         isClosable: true,
@@ -307,14 +308,14 @@ export function AuthProvider({ children }: React.PropsWithChildren) {
           historicOfBalance: [...userInformations.historicOfBalance, {value: userInformations.balance + value, date: Timestamp.now()}]
         });
         toast({
-          title: result.resultMessage,
+          title: convertFirebaseMessages(result.resultMessage),
           status: "success",
           duration: 2000,
           isClosable: true,
         });
       } else {
         toast({
-          title: result.resultMessage,
+          title: convertFirebaseMessages(result.resultMessage),
           status: "error",
           duration: 3000,
           isClosable: true,
@@ -323,7 +324,7 @@ export function AuthProvider({ children }: React.PropsWithChildren) {
     })
     .catch((error) => {
       toast({
-        title: error.code,
+        title: convertFirebaseMessages(error.code),
         status: "error",
         duration: 3000,
         isClosable: true,

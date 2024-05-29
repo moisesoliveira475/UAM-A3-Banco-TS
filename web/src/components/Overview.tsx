@@ -14,15 +14,6 @@ export function OverView() {
 
   const [dataPieChart, setDataPieChart] = useState<{value: number; name: string; fill: string}[]>([]);
 
-  // const data = [
-  //   { name: 'Group A', value: 400 },
-  //   { name: 'Group B', value: 300 },
-  //   { name: 'Group C', value: 300 },
-  //   { name: 'Group D', value: 200 },
-  // ];
-  // const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
-
-
   useEffect(() => {
     function updateData() {
       let totalOfDeposits = userInformations!.historicOfMovements.filter(item => item.type === 'deposit').reduce((acc, item) => acc + item.value, 0);
@@ -215,6 +206,7 @@ export function OverView() {
             </>)}
           </Box>
         </Box>
+        {/* resume of account */}
         <Box style={{
           display: 'flex',
           height: '100%',
@@ -256,6 +248,7 @@ export function OverView() {
               <Text style={{fontWeight: 'bold', fontSize: '1rem'}}>{formatReal(userInformations!.totalWithdraws)}</Text>
             </Box>
           </Box>
+          {/* chart */}
           <Box style={{display: 'flex', alignItems: 'center', flexDirection: 'column', marginTop: '1rem', width: '100%', background: '#FAFBFC15', borderRadius: '0.7rem', padding: '0 1rem 1rem 1rem'}}>
             <PieChart width={400} height={200}>
               <Pie
