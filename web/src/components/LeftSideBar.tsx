@@ -94,6 +94,7 @@ export const LeftSideBar = ({ button }: LeftSideBarProps) => {
         left: 0,
         padding: "2rem 0",
         alignItems: "center",
+        color: 'white'
       }}
     >
       <Image
@@ -148,8 +149,9 @@ export const LeftSideBar = ({ button }: LeftSideBarProps) => {
                 alignItems: 'center',
                 justifyContent: 'flex-start',
               }}
+              _hover={undefined}
             >
-              <Text fontSize={"lg"}>{icon.text}</Text>
+              <Text fontSize={"lg"} color="white">{icon.text}</Text>
             </Button>
           </Box>
         ))}

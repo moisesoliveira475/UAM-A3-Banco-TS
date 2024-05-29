@@ -73,5 +73,7 @@ export function convertFirebaseMessages(firebaseMessage: string) {
       return 'Saque realizado com sucesso';
     case 'Withdraw failed':
       return 'Falha ao sacar';
+    default:
+      return 'Algo deu errado :('
   }
 }

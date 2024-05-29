@@ -8,7 +8,7 @@
     "deploy": "firebase deploy",
     "test": "jest",
     "serve": "cd functions && yarn build && cd .. && npm run build && firebase.cmd emulators:start",
-    "all": "npm run build && firebase.cmd emulators:start --only firestore,auth,functions",
+    "all": "npm run build && npx firebase emulators:start --only firestore,auth,functions",
     "functions": "npm run build && firebase.cmd emulators:start --only functions",
     "shell": "npm run build && firebase.cmd functions:shell",
     "start": "npm run shell"

@@ -36,16 +36,16 @@ export function OverView() {
       style={{
         display: "flex",
         width: "100%",
-        height: "100%",
         flexDirection: "column",
         padding: "3rem 2rem",
+        overflowY: "scroll"
       }}
     >
       <Box style={{display: 'flex', alignItems: 'center', marginBottom: '1.7rem'}}>
         <Text style={{fontSize: '1.2rem', fontWeight: 'bold', marginRight: '1rem'}}>Overview</Text>
         <Box style={{display: 'flex', alignItems: 'center'}} className={styles.animation}>
           <FiCircle style={{width: 13, height: 13, fill: 'white'}} />
-          <Text style={{fontSize: '0.8rem', fontWeight: 'bold', marginLeft: '0.5rem'}}>Atualizando a cada 5s</Text>
+          <Text style={{fontSize: '0.8rem', fontWeight: 'bold', marginLeft: '0.5rem'}}>Atualização em tempo real</Text>
         </Box>
       </Box>
       <Box style={{display: 'flex', flexDirection: 'row', width: '100%', alignItems: 'flex-start', justifyContent: 'flex-start', minHeight: '16rem'}}>
@@ -128,13 +128,6 @@ export function OverView() {
                 }} >Total Transferências</Text>
                 <Text>{formatReal(userInformations?.totalTransfers || 0)}</Text>
             </Box>
-            {/* <Button style={{
-              background: 'linear-gradient(90deg, #3E79E5 0%, #01B8E3 100%)',
-              borderRadius: '0.6rem',
-              borderWidth: '1px',
-              borderColor: '#3e79e5'
-            }}
-            >Fazer pagamento</Button> */}
         </Box>
         <Box
             style={{
@@ -158,7 +151,7 @@ export function OverView() {
         display: 'flex',
         width: '100%',
         flexDirection: 'row',
-        marginTop: 30
+        marginTop: '9rem',
       }}>
         <Box style={{
           display: 'flex',

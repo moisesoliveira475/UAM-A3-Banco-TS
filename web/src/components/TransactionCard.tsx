@@ -84,7 +84,7 @@ export function TransactionCard({ data }: TransactionCardProps) {
               color: "white",
             }}
           >
-            {data.type}
+            {data.type === "deposit" ? "Depósito" : data.type === "withdraw" ? "Saque" : data.type === 'credit@loan' ? "Empréstimo de crédito" : data.type === 'credit@payment' ? 'Pagamento de crédito' : data.type === 'transfer@received' ? 'Transferência recebida' : data.type === 'transfer@sent' ? 'Transferência recebida' : 'Carregando...'}
           </Text>
           <Text
             style={{
@@ -118,7 +118,7 @@ export function TransactionCard({ data }: TransactionCardProps) {
         <Text
           style={{ color: "#1192EF", fontSize: "0.7rem", fontFamily: "Sora" }}
         >
-          {data.type}
+          {data.type === "deposit" ? "Depósito" : data.type === "withdraw" ? "Saque" : data.type === 'credit@loan' ? "Empréstimo de crédito" : data.type === 'credit@payment' ? 'Pagamento de crédito' : data.type === 'transfer@received' ? 'Transferência recebida' : data.type === 'transfer@sent' ? 'Transferência recebida' : 'Carregando...'}
         </Text>
       </Box>
       <Box>

@@ -2,7 +2,6 @@ import { ColorModeToggle } from "@/components/ColorModeToggle";
 import { LeftSideBar } from "@/components/LeftSideBar";
 import { OverView } from "@/components/Overview";
 import { RightSideBar } from "@/components/RightSideBar";
-import { Transactions } from "@/components/Transactions";
 import { AuthContext } from "@/contexts/useAuth";
 import { db } from "@/services/firebase";
 import { userInformations } from "@/types/auth.types";
@@ -30,7 +29,7 @@ export function Home() {
 
     const interval = setInterval(() => {
       getLastBalance();
-    }, 5000);
+    }, 500);
 
     return () => {
       clearInterval(interval);
@@ -47,6 +46,7 @@ export function Home() {
         height: "100vh",
         alignItems: "stretch",
         justifyContent: "space-between",
+        color: 'white'
       }}
     >
       <LeftSideBar button={<ColorModeToggle />}/>
